@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const config = {
   db: {
     userName: process.env.DB_USER_NAME,
@@ -13,5 +17,7 @@ const config = {
     host: process.env.REDIS_HOST,
   },
 };
+
+console.log('config', config);
 
 export default config;

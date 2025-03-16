@@ -18,7 +18,6 @@ router.get('/status/:uniqueId', async (req, res) => {
     // Send CSV as response
     res.setHeader('Content-Disposition', `attachment; filename="status_${uniqueId}.csv"`);
     res.setHeader('Content-Type', 'text/csv');
-    console.log('success');
     const fileStream = fs.createReadStream(filePath);
     fileStream.pipe(res);
 
