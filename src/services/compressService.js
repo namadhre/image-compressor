@@ -29,20 +29,6 @@ compressService.create = async (values) => {
     await compressController.bulkCreate(updatedValues);
     await requestControllor.create({ status: 'pending', uniqueId });
     await imageQueue.add('processImages', { requestId: uniqueId });
-    setTimeout(async () => {
-        const waitingJobs = await imageQueue.getWaiting();
-        console.log("⏳ Waiting Jobs:", waitingJobs.map(job => ({
-            id: job.id,
-            name: job.name,
-            data: job.data
-        })));
-        const activeJobs = await imageQueue.getActive();
-        console.log("🔄 Active Jobs (Delayed Check):", activeJobs.map(job => ({
-            id: job.id,
-            name: job.name,
-            data: job.data
-        })));
-    }, 5000); // Wait 500ms before checking
     
     return uniqueId;
 }

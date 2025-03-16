@@ -1,12 +1,11 @@
 import { Sequelize } from 'sequelize';
+import config from '../config.js';
 
-// Database connection details
-
-const db = new Sequelize('postgres', 'postgres', '6xEwjlpC@123', {
-    host: 'localhost',
-    dialect: 'postgres',
-    port: 5433,
-    logging: false,  // Set to true if you want to log SQL queries
+const db = new Sequelize(config.db.database, config.db.userName, config.db.password, {
+    host: config.db.host,
+    dialect: config.db.dialect,
+    port: config.db.port,
+    logging: config.db.logging,
 });
 
 db.sync({ alter: true }) // Updates table if needed
