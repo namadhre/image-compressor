@@ -6,6 +6,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+console.log('process.env', process.env);
+
 const app = express();
 
 const PORT = process.env.PORT || 3000;
