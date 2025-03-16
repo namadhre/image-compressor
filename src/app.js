@@ -1,8 +1,8 @@
 // Now other imports will have access to env variables
+import dotenv from 'dotenv';
 import express from 'express';
 import compressorRoute from './routers/compressorRoute.js';
 import requestRouter from './routers/requestRouter.js';
-import dotenv from 'dotenv';
 
 dotenv.config();
 
