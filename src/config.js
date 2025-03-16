@@ -1,7 +1,3 @@
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 const config = {
   db: {
     userName: process.env.DB_USER_NAME,

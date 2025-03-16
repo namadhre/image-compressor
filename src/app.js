@@ -2,6 +2,9 @@
 import express from 'express';
 import compressorRoute from './routers/compressorRoute.js';
 import requestRouter from './routers/requestRouter.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 
