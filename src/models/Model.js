@@ -3,6 +3,8 @@ import config from '../config.js';
 
 console.log('config', config);
 
+console.log('process.env', process.env);
+
 const db = new Sequelize(config.db.database, config.db.userName, config.db.password, {
     host: config.db.host,
     dialect: config.db.dialect,
