@@ -1,8 +1,11 @@
-// Now other imports will have access to env variables
+import { config } from './src/config/index.js';
+import db from './src/models/Model.js';
+import dotenv from 'dotenv';
 import express from 'express';
-import compressorRoute from './routers/compressorRoute.js';
-import requestRouter from './routers/requestRouter.js';
+import compressorRoute from './src/routers/compressorRoute.js';
+import requestRouter from './src/routers/requestRouter.js';
 
+dotenv.config();
 const app = express();
 
 const PORT = process.env.PORT || 3000;

@@ -1,18 +1,21 @@
-import { Sequelize } from 'sequelize';
-import config from '../config.js';
+import { Sequelize, DataTypes, Op } from 'sequelize';
+import { config } from '../config/index.js';
 
-console.log('config', config);
-
-const db = new Sequelize(config.db.database, config.db.userName, config.db.password, {
-    host: config.db.host,
-    dialect: config.db.dialect,
-    port: config.db.port,
-    logging: config.db.logging,
-});
+const db = new Sequelize(
+    config.database.userName,
+    config.database.userName,
+    config.database.password,
+    {
+        host: config.database.host,
+        dialect: config.database.dialect,
+        logging: config.database.logging,
+        port: config.database.port
+    }
+);
 
 db.sync({ alter: true }) // Updates table if needed
     .then(() => console.log("Database synchronized"))
     .catch(err => console.error("Error syncing database", err));
 
-
 export default db;
+export { DataTypes, Op };

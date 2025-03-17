@@ -2,8 +2,8 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const config = {
-  db: {
+export const config = {
+  database: {
     userName: process.env.DB_USER_NAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
@@ -17,7 +17,3 @@ const config = {
     host: process.env.REDIS_HOST,
   },
 };
-
-console.log('config', config);
-
-export default config;
