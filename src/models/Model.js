@@ -1,6 +1,8 @@
 import { Sequelize, DataTypes, Op } from 'sequelize';
 import { config } from '../config/index.js';
 
+console.log('config', config);
+console.log('config.database', process.env);
 const db = new Sequelize(
     config.database.userName,
     config.database.userName,
