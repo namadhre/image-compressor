@@ -8,6 +8,8 @@ import requestRouter from './src/routers/requestRouter.js';
 dotenv.config();
 const app = express();
 
+console.log('config', process.env);
+
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
