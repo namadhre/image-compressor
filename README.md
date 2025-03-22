@@ -29,9 +29,9 @@ This project is an **asynchronous image processing system** that takes a CSV fil
  ┣ 📂 src
  ┃ ┣ 📂 controllers
  ┃ ┣ 📂 services
- ┃ ┣ 📂 workers
+ ┃ ┣ 📂 routers
  ┃ ┣ 📂 models
- ┃ ┗ 📜 app.js
+ ┣ 📜 app.js
  ┣ 📜 .env
  ┣ 📜 package.json
  ┣ 📜 README.md
@@ -81,13 +81,7 @@ redis-server  # Start Redis
 ### **5️⃣ Run the Server**
 
 ```sh
-npm start  # OR use pm2 for production
-```
-
-### **6️⃣ Run the Worker**
-
-```sh
-node src/workers/imageWorker.js
+node app.js  # OR use pm2 for production
 ```
 
 ## 📌 API Endpoints
