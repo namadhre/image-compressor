@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import compressorRoute from './src/routers/compressorRoute.js';
 import requestRouter from './src/routers/requestRouter.js';
+import worker from './src/services/worker.js';
 
 dotenv.config();
 const app = express();
@@ -14,6 +15,8 @@ app.use(express.json());
 
 app.use('/compress', compressorRoute);
 app.use('/request', requestRouter);
+
+worker.start();
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
