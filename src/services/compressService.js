@@ -3,12 +3,15 @@ import Redis from 'ioredis';
 import { Queue } from 'bullmq';
 import CompressController from '../controllers/compressController.js';
 import RequestControllor from '../controllers/requestControllor.js';
+import { config } from '../config/index.js';
 
 
 // const redisConnection = new Redis();
 const redisConnection = new Redis({
-    host: '127.0.0.1',
-    port: 6379,
+    host: config.redis.host,
+    port: config.redis.port,
+    password: config.redis.password,
+    username: config.redis.userName,
     maxRetriesPerRequest: null // Required for BullMQ
 });
 const imageQueue = new Queue('imageProcessing', { connection: redisConnection });

@@ -15,5 +15,7 @@ export const config = {
   redis: {
     port: process.env.REDIS_PORT,
     host: process.env.REDIS_HOST,
+    password: process.env.REDIS_PASSWORD,
+    userName: process.env.REDIS_USER_NAME,
   },
 };
